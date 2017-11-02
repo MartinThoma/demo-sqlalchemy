@@ -1,0 +1,6 @@
+{"db": {"username": "root",
+        "password": "password",
+        "dbname": "test_db",
+        "host": "localhost",
+        "port": "3306"},
+ "upload_dir": "filestorage"}

@@ -1,0 +1,34 @@
+version: '3'  # Version number of the docker-compose file format
+services:
+  db:
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+    - MYSQL_DATABASE=test_db
+    - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - ./docker/mysql-data:/var/lib/mysql
+  web:
+    build: web
+    command: /opt/app/run.sh
+    ports:
+    - "8082:8082"
+    volumes:
+     - ./web:/opt/app  # enables hot code reloading
+     - uploads:/opt/app/filestorage  # for data persistance (<volume name>:<abs path in container>)
+    links:
+    - db
+    hostname: myappserver
+    environment:
+    - UPLOAD_DIR=/opt/app/filestorage
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=test_db
+    - MYSQL_HOST=db
+    - MYSQL_PORT=3306
+    depends_on:
+    - db
+    restart: always
+volumes:
+    uploads:
