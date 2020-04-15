@@ -22,5 +22,5 @@ pymysql==0.9.3            # via -r requirements.txt
 raven[flask]==6.1.0       # via -r requirements.txt
 requests==2.18.4          # via -r requirements.txt
 sqlalchemy==1.1.14        # via -r requirements.txt, flask-sqlalchemy
-urllib3==1.22             # via requests
+urllib3==1.24.2             # via requests
 werkzeug==1.0.1           # via flask
