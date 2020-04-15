@@ -2,6 +2,7 @@
 
 """Run the webserver."""
 
+# Third party modules
 from foo_submodule import app, db
 
 if __name__ == "__main__":
@@ -12,5 +13,6 @@ if __name__ == "__main__":
     # into our `create_all` call.
     db.create_all(app=app)
     from gevent.wsgi import WSGIServer
-    http_server = WSGIServer(('', 8082), app)
+
+    http_server = WSGIServer(("", 8082), app)
     http_server.serve_forever()

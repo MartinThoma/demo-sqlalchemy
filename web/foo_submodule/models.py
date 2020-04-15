@@ -2,6 +2,7 @@
 
 """Models which represent tables in the database."""
 
+# Third party modules
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -10,7 +11,7 @@ db = SQLAlchemy()
 class Foobar(db.Model):
     """Model for Foobar."""
 
-    __tablename__ = 'foobar'
+    __tablename__ = "foobar"
     foo = db.Column(db.Integer, primary_key=True)
     bar = db.Column(db.Integer)
 
@@ -19,4 +20,4 @@ class Foobar(db.Model):
 
     def __repr__(self):
         """Return a representation of this object."""
-        return "<Foobar({}, {})>".format(self.foo, self.bar)
+        return f"<Foobar({self.foo}, {self.bar})>"
