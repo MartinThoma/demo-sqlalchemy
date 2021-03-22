@@ -16,7 +16,7 @@ gevent==1.2.2             # via -r requirements.txt
 greenlet==0.4.15          # via gevent
 idna==2.6                 # via requests
 itsdangerous==1.1.0       # via flask
-jinja2==2.11.2            # via flask
+jinja2==2.11.3            # via flask
 markupsafe==1.1.1         # via jinja2
 pymysql==0.9.3            # via -r requirements.txt
 raven[flask]==6.1.0       # via -r requirements.txt
