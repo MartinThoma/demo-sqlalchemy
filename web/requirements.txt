@@ -5,7 +5,7 @@
 #    pip-compile requirements.txt
 #
 blinker==1.4              # via raven
-certifi==2020.4.5.1       # via requests
+certifi==2022.12.7       # via requests
 chardet==3.0.4            # via requests
 click==7.1.1              # via flask
 contextlib2==0.6.0.post1  # via raven
